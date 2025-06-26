@@ -117,6 +117,119 @@ Endpoints REST protegidos por JWT
 
 ## ⚙️ Configuração do Ambiente
 
+🧪 Testes Automatizados
+JUnit 5 + MockMvc
+
+Testes de autenticação e acesso
+
+Validação de tokens
+
+Verificação de acesso negado
+
+bash
+Copiar
+Editar
+./mvnw test
+📈 Testes de Carga com JMeter
+Como Rodar:
+Abra o JMeter e crie um Thread Group (ex: 200 usuários, 10 loops)
+
+Adicione um HTTP Request para POST /auth/login
+
+Defina parâmetros: username=admin, password=123456
+
+Adicione os listeners:
+
+Summary Report
+
+View Results Tree
+
+Execute e analise:
+
+✅ Throughput
+
+⏱️ Tempo Médio de Resposta
+
+❌ % de Erros
+
+Arquivo JMX: jmeter-tests/login_stress_test.jmx
+
+📚 Documentação da API
+Acesse: http://localhost:8080/swagger-ui.html
+
+Documentação interativa dos endpoints
+
+Suporte a autenticação Bearer JWT via Swagger UI
+
+🩺 Monitoramento da API
+Endpoints disponíveis via Spring Boot Actuator:
+/actuator/health
+
+/actuator/info
+
+/actuator/metrics
+
+/actuator/prometheus
+
+Prometheus
+Configurado para raspar métricas da API
+
+Conecta no endpoint /actuator/prometheus
+
+Grafana
+Dashboards com métricas em tempo real:
+
+Requisições por segundo
+
+Tempo médio de resposta
+
+Uso de CPU e memória
+
+🐳 Docker e Deploy
+Dockerfile
+dockerfile
+Copiar
+Editar
+FROM eclipse-temurin:17-jdk-alpine
+COPY target/auth-api.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+Build e Execução
+bash
+Copiar
+Editar
+./mvnw clean package
+docker build -t auth-api .
+docker run -p 8080:8080 auth-api
+Hospedagem gratuita recomendada
+Render – Deploy direto do GitHub
+
+Railway – Suporte para Spring Boot e Docker
+
+🔧 Como Executar Localmente
+Clone o repositório:
+
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/auth-api-av2.git
+cd auth-api-av2
+Rode o projeto:
+
+bash
+Copiar
+Editar
+./mvnw spring-boot:run
+Acesse:
+
+Swagger UI: http://localhost:8080/swagger-ui.html
+
+H2 Console: http://localhost:8080/h2-console
+
+👥 Usuários Padrão
+Usuário	Senha	Role
+admin	123456	ADMIN
+user	password	USER
+
 Operações de leitura permitidas a usuários autenticados
 
 Operações de escrita (POST/PUT/DELETE) restritas a ADMIN
