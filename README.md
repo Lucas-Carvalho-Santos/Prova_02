@@ -114,6 +114,8 @@ Operações de escrita (POST/PUT/DELETE) restritas a ADMIN
 
 Endpoints REST protegidos por JWT
 
+## ⚙️ Configuração do Ambiente
+
 Operações de leitura permitidas a usuários autenticados
 
 Operações de escrita (POST/PUT/DELETE) restritas a ADMIN
