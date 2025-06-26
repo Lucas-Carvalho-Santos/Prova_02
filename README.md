@@ -118,3 +118,5 @@ Operações de leitura permitidas a usuários autenticados
 
 Operações de escrita (POST/PUT/DELETE) restritas a ADMIN
 
+---
+
