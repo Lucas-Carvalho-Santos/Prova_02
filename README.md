@@ -71,3 +71,26 @@ management:
     web:
       exposure:
         include: health,info,metrics,prometheus
+
+🛠️ Funcionalidades Implementadas
+🔐 Endpoints de Autenticação
+POST /auth/login – autentica e retorna token JWT
+
+POST /auth/register – registra novos usuários
+
+POST /auth/validate – valida token existente
+
+🛡️ Proteção de Endpoints com Spring Security
+Apenas usuários autenticados podem acessar endpoints protegidos
+
+Regras baseadas em roles (USER, ADMIN)
+
+JWT validado com chave interna (HMAC SHA256)
+
+🧩 Integração com Endpoints CRUD
+Endpoints REST protegidos por JWT
+
+Operações de leitura permitidas a usuários autenticados
+
+Operações de escrita (POST/PUT/DELETE) restritas a ADMIN
+
