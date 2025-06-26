@@ -71,6 +71,7 @@ management:
     web:
       exposure:
         include: health,info,metrics,prometheus
+```
 
 🛠️ Funcionalidades Implementadas
 🔐 Endpoints de Autenticação
